@@ -136,7 +136,7 @@ export default class Player extends cc.Component { // クラス名をNewClassか
     update (dt: number) { // 毎フレームの描画前の処理（dt：前フレームからの経過時間）
         let velocity: cc.Vec2 = this.getComponent(cc.RigidBody).linearVelocity; // 現在の速度を取得
 
-        // 左右の移動処理
+        // 左右の移動
         if(this.direction != 0) { // 移動する場合
             this.node.scaleX = Math.abs(this.node.scaleX) * this.direction; // 絵の向きを進行方向にする
             velocity.x += this.acceleration * dt * this.direction; // 次の速度を計算する
@@ -151,7 +151,7 @@ export default class Player extends cc.Component { // クラス名をNewClassか
             }
         }
 
-        // ジャンプ中断処理
+        // ジャンプの中断
         if (this.jumpBreak) { // ジャンプ中断フラグがtrueの場合
             if (this.jumpCount && velocity.y > 0) { // ジャンプ中かつ上昇中の場合
                 let d: number = this.jumpDeceleration * dt;; // 1フレーム当たりの減速量
@@ -167,15 +167,15 @@ export default class Player extends cc.Component { // クラス名をNewClassか
 
         this.getComponent(cc.RigidBody).linearVelocity = velocity; // 速度を更新する
 
-        // アニメーションの切替処理
+        // アニメーションの再生
         if (this.isLanging) { // 着地中の場合
             if (velocity.x == 0) { // X方向の速度が0の場合
-                this.animation = "playerStand"; // 『stand』用のアニメを設定する
+                this.animation = "playerStand"; // 『stand』用のアニメを再生する
             } else { // X方向の速度が0ではない場合
-                this.animation = "playerWalk"; // 『walk』用のアニメを設定する
+                this.animation = "playerWalk"; // 『walk』用のアニメを再生する
             }
         } else { // 空中の場合
-            this.animation = "playerJump"; // 『jump』用のアニメを設定する
+            this.animation = "playerJump"; // 『jump』用のアニメを再生する
         }
     }
     
