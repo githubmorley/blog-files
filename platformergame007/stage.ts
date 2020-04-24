@@ -1,7 +1,7 @@
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class Stage extends cc.Component { // クラス名をNewClassからStageにする
 
     tiledMap: cc.TiledMap = null; // タイルマップ
     tiledMapSize: cc.Size = null; // タイルマップのサイズ
