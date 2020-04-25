@@ -11,12 +11,12 @@ export default class Stage extends cc.Component { // クラス名をNewClassか�
             this.tiledMap.getTileSize().width * this.tiledMap.getMapSize().width, // タイルの幅 × x方向のタイルの枚数
             this.tiledMap.getTileSize().height * this.tiledMap.getMapSize().height); // タイルの高さ × y方向のタイルの枚数
 
-        this.addPhisicsNode(this.tiledMap); // コライダーを設置する
+        this.addPhisicsNode(); // コライダーを設置する
     }
 
-    addPhisicsNode (tiledMap: cc.TiledMap) { // 『Tiled』のオブジェクト情報を元にコライダーを配置
-        let objects: any[] = tiledMap.getObjectGroup("platform").getObjects(); // 『Tiled』のplatformレイヤーのオブジェクトを取得
-        let layerNode: cc.Node = tiledMap.node.getChildByName("platform"); // platformノードを取得
+    addPhisicsNode () { // 『Tiled』のオブジェクト情報を元にコライダーを配置
+        let objects: any[] = this.tiledMap.getObjectGroup("platform").getObjects(); // 『Tiled』のplatformレイヤーのオブジェクトを取得
+        let layerNode: cc.Node = this.tiledMap.node.getChildByName("platform"); // platformノードを取得
         let physicsNode: cc.Node = new cc.Node(); // コライダーを配置するノードを作成
         physicsNode.name = "platformCollider"; // ノード名を変更する
         let rigidBody: cc.RigidBody = physicsNode.addComponent(cc.RigidBody); // ノードにRigidBody（剛体）コンポーネントを追加
