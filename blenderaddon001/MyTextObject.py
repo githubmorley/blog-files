@@ -117,13 +117,13 @@ def add_props():
     scene.string_fontfile2 = StringProperty( # フォントファイルのパス
         name="2", # 
         description="フォントファイルを指定します。", # 説明文、マウスオーバーで表示
-        default="C:\Windows\Fonts\msgothic.ttc", # 初期値、メイリオ
+        default="C:\Windows\Fonts\msgothic.ttc", # 初期値、MSゴシック
         subtype="FILE_PATH", # 入力形式を指定
     )
     scene.string_fontfile3 = StringProperty( # フォントファイルのパス
         name="3", # 
         description="フォントファイルを指定します。", # 説明文、マウスオーバーで表示
-        default="C:\Windows\Fonts\msmincho.ttc", # 初期値、メイリオ
+        default="C:\Windows\Fonts\msmincho.ttc", # 初期値、MS明朝
         subtype="FILE_PATH", # 入力形式を指定
     )
     scene.string_text = StringProperty( # テキストオブジェクトにする文字列
