@@ -55,11 +55,10 @@ class SIDEBAR_PT_CustomMenu(bpy.types.Panel):
 
         layout.label(text="フォントを選択：") # ラベルを追加
         layout.prop(scene, "enum_fontfile") # テキストボックスを追加
+        
         layout.prop(scene, "string_fontfile1") # テキストボックスを追加
         layout.prop(scene, "string_fontfile2") # テキストボックスを追加
         layout.prop(scene, "string_fontfile3") # テキストボックスを追加
-        layout.prop(scene, "string_fontfile4") # テキストボックスを追加
-        layout.prop(scene, "string_fontfile5") # テキストボックスを追加
 
         layout.label(text="文字列：") # ラベルを追加
         layout.prop(scene, "string_text") # テキストボックスを追加
