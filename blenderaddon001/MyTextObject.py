@@ -67,7 +67,7 @@ class SIDEBAR_PT_CustomMenu(bpy.types.Panel):
 
 # オペレータクラス：テキストオブジェクトを作成
 class BUTTON_OT_CreateText(bpy.types.Operator):
-    bl_idname = "12__button.createtext" # Blender内部で使用するID
+    bl_idname = "button.createtext" # Blender内部で使用するID
     # bl_idnameの命名規則
     # [A-Z][A-Z0-9_]*_(HT|MT|OT|PT|UL)_[A-Za-z0-9_]+
     # 『.(ピリオド)』を1つだけ含む、全て小文字と数字と『_(ピリオド)』
